@@ -15,15 +15,27 @@ class EmailDuplicateError extends BaseError {
     }
 }
 
+class MovieDuplicateError extends BaseError {
+    constructor() {
+        super("CONFLICT", 409, 'movie with this title already exist.');
+    }
+}
+
 class EmailOrPasswordWrongError extends BaseError {
     constructor() {
         super("NOT FOUND", 404, 'email or password is wrong.');
     }
 }
 
-class UrlNotFoundError extends BaseError {
+class AdminNotFoundError extends BaseError {
     constructor() {
-        super("NOT FOUND", 404, 'No URL found');
+        super("NOT FOUND", 404, 'admin does not exist');
+    }
+}
+
+class MovieNotFoundError extends BaseError {
+    constructor() {
+        super("NOT FOUND", 404, 'movie does not exist');
     }
 }
 
@@ -55,8 +67,10 @@ class ServerError extends BaseError {
 
 module.exports = {
     EmailDuplicateError,
+    MovieDuplicateError,
     EmailOrPasswordWrongError,
-    UrlNotFoundError,
+    AdminNotFoundError,
+    MovieNotFoundError,
     NotAuthorizedError,
     ForbiddenError,
     NotValidError,
