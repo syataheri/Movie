@@ -15,7 +15,7 @@ app.use(express.json());
 app.post("/admin/signup", makeExpressCallback(postAdmin));
 app.get("/admins", makeExpressCallback(getAdmins));
 app.post("/admin/update", makeExpressCallback(postUpdateAdmin));
-app.delete("/admin/remove/:id", makeExpressCallback(postRremoveAdmin));
+app.delete("/admin/remove", makeExpressCallback(postRremoveAdmin));
 app.post("/admin/login", makeExpressCallback(postLogin));
 app.post("/movie/addmovie", isAuth, makeExpressCallback(postAddMovie));
 app.get("/movies", makeExpressCallback(getMovies));

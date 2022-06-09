@@ -2,9 +2,9 @@ const makeRemoveAdmin = (removeAdmin) => {
     return async (httpReequest) => {
         try {
 
-            const params = httpReequest.params;
+            const {email} = httpReequest.body;
 
-            const result = await removeAdmin(+params.id);
+            const result = await removeAdmin(email);
             
             if (result.statusCode) {
                 throw result;

@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 // this require is for testing use cases
-// require("dotenv").config();
+require("dotenv").config();
 
 let dbName;
 if (process.env.NODE_ENV === "production") {

@@ -19,8 +19,8 @@ const adminDataBase = (Admin) => {
         return await Admin.update({ [key]: value }, { where: { id: id } });
     }
 
-    const remove = async (id) => {
-        return await Admin.destroy({ where: { id: id } });
+    const remove = async (email) => {
+        return await Admin.destroy({ where: { email: email } });
     }
 
     return Object.freeze({

@@ -1,5 +1,6 @@
 module.exports = function buildMakeAdmin({ isValid, NotValidError, encrypt }) {
     return createAdmin = async (data) => {
+
         try {
             const validation = await isValid(data);
             if (validation) {

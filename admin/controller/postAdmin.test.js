@@ -12,7 +12,7 @@ describe("post admin cnotrller" , () => {
         httpRequest.body = {};
         response = await postAdmin(httpRequest);
         expect(response.statusCode).toBe(406);
-    })
+    });
 
     
 })
