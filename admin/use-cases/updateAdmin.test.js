@@ -1,34 +1,29 @@
 const { createAdmin, updateAdmin, removeAdmin } = require("./app");
-
 const sequelize = require("../../db/db");
+const { AdminNotFoundError, ServerError } = require("../../exceptions");
 
 describe("use case update admin", () => {
-    let admin, response;
+    let admin;
 
-    beforeAll(() => {
+    beforeAll(async () => {
         sequelize.sync();
-        createAdmin({ firstName: "syamak", lastName: "taheri", email: "syataheri8@gmail.com", password: "2154@KSsjsde" });
+        await removeAdmin("syataheri8@gmail.com");
+        await createAdmin({ firstName: "syamak", lastName: "taheri", email: "syataheri8@gmail.com", password: "2154@KSsjsde" });
     });
 
-    it("given the user does not exist in database, responds with 'admin does not exist'", async () => {
+    it("given the user does not exist in database, responds with AdminNotFoundError", async () => {
         admin = { firstName: "sya", lastName: "taheri", email: "syata@gmail.com", password: "2154@KSsjsde" };
-        response = await updateAdmin(admin);
-        expect(response.statusCode).toBe(404);
+        expect(updateAdmin(admin)).rejects.toThrow(new AdminNotFoundError);
     });
 
     it("given the user does not exist in database, responds with 'admin successfully updated'", async () => {
         admin = { firstName: "sya", lastName: "taher", email: "syataheri8@gmail.com", password: "2154@KSs58sde" };
-        response = await updateAdmin(admin);
-        expect(response).toBe("admin successfully updated");
+        expect(updateAdmin(admin)).resolves.toEqual("admin successfully updated");
     });
 
     it("given something went wrong in server side, respond with 500", async () => {
-        admin = { firstName: "syamak", lastName: "taher", password: "2154@KSs58sde" };
-        response = await updateAdmin(admin);
-        expect(response.statusCode).toBe(500);
+        admin = { firstName: "syamak", lastName: "taher", email: "syataheri8@gmail.com", password: "2154@KSs58sde" };
+        sequelize.close();
+        expect(updateAdmin(admin)).rejects.toThrow(new ServerError);
     });
-
-    afterAll(() => {
-        removeAdmin("syataheri8@gmail.com");
-    })
 })

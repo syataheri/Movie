@@ -20,7 +20,6 @@ const makeUpdateAdmin = ({ makeCreateAdmin, adminDB, AdminNotFoundError }) => {
                 return "there is nothing to modify."
             }
             await Promise.all(promise);
-
             return "admin successfully updated"
         } catch (error) {
             throw error;
