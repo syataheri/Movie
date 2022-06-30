@@ -1,5 +1,4 @@
-const { valid } = require('joi');
-const Joi = require('joi');
+import Joi from 'joi';
 
 const validTypes = ["series", "film", "animation"];
 const validGenre = ["romantic", "action", "science fiction", "drama"];
@@ -15,7 +14,7 @@ const isValid = async (data) => {
             .message("you shoud enter genre between romantic, action, drama, science fiction"),
         imdb: Joi.number().less(10.1).greater(1).precision(1).message("imdb should be number between 1 to 10"),
         yearOfCreation: Joi.number().required().integer().min(1920).max(2022).message("year of creation should be between 1920 to 2022"),
-    countryOfCreation: Joi.string().required().trim().lowercase().min(3).max(50).message("county of Creation should be more than two characters"),
+        countryOfCreation: Joi.string().required().trim().lowercase().min(3).max(50).message("county of Creation should be more than two characters"),
         adminId: Joi.number().required().integer().positive()
     });
     const err = await schema.validate(data);
@@ -39,4 +38,4 @@ const genreMethod = (value, helpers) => {
     return true;
 }
 
-module.exports = isValid;
+export { isValid };

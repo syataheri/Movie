@@ -16,15 +16,15 @@ const makeUpdateMovie = ({ makeMovie, movieDB, MovieNotFoundError, ForbiddenErro
             }
             const promise = [];
             for (key in movie) {
-                if(movie[key] != exist[key]){
-                    promise.push(movieDB.update([exist.adminId , key , movie[key]]));
+                if (movie[key] != exist[key]) {
+                    promise.push(movieDB.update([exist.adminId, key, movie[key]]));
                 }
             }
-            if(promise.length <= 0){
+            if (promise.length <= 0) {
                 return "there is nothing to modify."
             }
             await Promise.all(promise);
-            
+
             return 'movie updated';
         } catch (error) {
             throw error;
@@ -32,4 +32,4 @@ const makeUpdateMovie = ({ makeMovie, movieDB, MovieNotFoundError, ForbiddenErro
     }
 }
 
-module.exports = makeUpdateMovie;
+export { makeUpdateMovie };

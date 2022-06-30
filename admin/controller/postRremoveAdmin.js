@@ -2,10 +2,10 @@ const makeRemoveAdmin = (removeAdmin) => {
     return async (httpReequest) => {
         try {
 
-            const {email} = httpReequest.body;
+            const { email } = httpReequest.body;
 
             const result = await removeAdmin(email);
-            
+
             if (result.statusCode) {
                 throw result;
             }
@@ -27,7 +27,7 @@ const makeRemoveAdmin = (removeAdmin) => {
                 body: {
                     error: {
                         message: e.message,
-                        data: e.data?e.data:""
+                        data: e.data ? e.data : ""
                     }
                 }
             }
@@ -35,4 +35,4 @@ const makeRemoveAdmin = (removeAdmin) => {
     }
 }
 
-module.exports = makeRemoveAdmin;
+export { makeRemoveAdmin };

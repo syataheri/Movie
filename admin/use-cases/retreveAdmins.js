@@ -12,4 +12,4 @@ const makeGetAdmins = ({ adminDB, AdminNotFoundError }) => {
     }
 }
 
-module.exports = makeGetAdmins;
+export { makeGetAdmins };

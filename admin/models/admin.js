@@ -1,14 +1,13 @@
+import Sequelize from "sequelize";
 
-const Sequelize = require("sequelize");
-
-const sequelize = require("../../db/db");
+import { sequelize } from "../../db/db.js";
 
 const Admin = sequelize.define("Admin", {
-    id:{
-        type:Sequelize.INTEGER,
-        autoIncrement:true,
-        allowNull:false,
-        primaryKey:true
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
     },
     firstName: {
         type: Sequelize.STRING,
@@ -28,4 +27,4 @@ const Admin = sequelize.define("Admin", {
     }
 });
 
-module.exports = Admin;
+export { Admin };

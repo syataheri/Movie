@@ -1,10 +1,10 @@
-const JWT = require("jsonwebtoken");
+import JWT from "jsonwebtoken";
 
 const jwt = (adminId) => {
     const token = JWT.sign({
-        adminId:adminId
+        adminId: adminId
     }, process.env.SECRET, { expiresIn: "1h" });
     return token;
 }
 
-module.exports = jwt;
+export { jwt };

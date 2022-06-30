@@ -7,16 +7,16 @@ const makeUpdateAdmin = ({ makeCreateAdmin, adminDB, AdminNotFoundError }) => {
             }
 
             const admin = await makeCreateAdmin(data);
-            if(admin.statusCode){
+            if (admin.statusCode) {
                 throw admin;
             }
             const promise = [];
             for (key in admin) {
-                if(admin[key] != exist[key]){
-                    promise.push(adminDB.update([exist.id , key , admin[key]]));
+                if (admin[key] != exist[key]) {
+                    promise.push(adminDB.update([exist.id, key, admin[key]]));
                 }
             }
-            if(promise.length <= 0){
+            if (promise.length <= 0) {
                 return "there is nothing to modify."
             }
             await Promise.all(promise);
@@ -28,4 +28,4 @@ const makeUpdateAdmin = ({ makeCreateAdmin, adminDB, AdminNotFoundError }) => {
     }
 }
 
-module.exports = makeUpdateAdmin;
+export { makeUpdateAdmin };

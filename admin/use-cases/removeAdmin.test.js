@@ -1,6 +1,6 @@
-const { createAdmin, removeAdmin } = require("./app");
-const sequelize = require("../../db/db");
-const { AdminNotFoundError, ServerError } = require("../../exceptions");
+import { createAdmin, removeAdmin } from "./app.js";
+import { sequelize } from "../../db/db.js";
+import { AdminNotFoundError, ServerError } from "../../exceptions.js";
 
 describe("remove an admin", () => {
     let response;

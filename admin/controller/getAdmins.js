@@ -28,4 +28,4 @@ const makeGetAdmins = (retreveAdmins) => {
     }
 }
 
-module.exports = makeGetAdmins;
+export { makeGetAdmins };

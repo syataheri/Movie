@@ -1,11 +1,11 @@
-const buildMakeAdmin = require("./admin");
-const {NotValidError} = require("../../exceptions");
-const isValid = require("../utils/validation.js");
-const {encrypt} = require("../utils/bcrypt");
+import { buildMakeAdmin } from "./admin.js";
+import { NotValidError } from "../../exceptions.js";
+import { isValid } from "../utils/validation.js";
+import { encrypt } from "../utils/bcrypt.js";
 
-const createAdmin = buildMakeAdmin({isValid , NotValidError , encrypt});
+const createAdmin = buildMakeAdmin({ isValid, NotValidError, encrypt });
 
-const makeCreateAdmin = (data)=> {
+const makeCreateAdmin = (data) => {
     return createAdmin(data);
 }
-module.exports = makeCreateAdmin;
+export { makeCreateAdmin };

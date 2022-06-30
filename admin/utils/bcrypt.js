@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+import bcrypt from "bcrypt";
 
 const encrypt = async (password) => {
     const salt = await bcrypt.genSalt(12);
@@ -11,4 +11,4 @@ const verify = async (password, hashedPassword) => {
 }
 
 
-module.exports = { encrypt, verify };
+export { encrypt, verify };

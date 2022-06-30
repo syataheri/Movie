@@ -60,4 +60,4 @@ const adminDataBase = ({ Admin, ServerError }) => {
 
 }
 
-module.exports = adminDataBase;
+export { adminDataBase };

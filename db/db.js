@@ -1,6 +1,7 @@
-const Sequelize = require("sequelize");
+import Sequelize from "sequelize";
 // this require is for testing use cases
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 let dbName;
 if (process.env.NODE_ENV === "production") {
@@ -20,4 +21,4 @@ const sequelize = new Sequelize(dbName, process.env.user, process.env.password, 
 });
 
 
-module.exports = sequelize;
+export { sequelize };

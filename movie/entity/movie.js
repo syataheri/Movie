@@ -12,4 +12,4 @@ const makeBuildMovie = ({ isValid, NotValidError }) => {
     }
 }
 
-module.exports = makeBuildMovie;
+export { makeBuildMovie };

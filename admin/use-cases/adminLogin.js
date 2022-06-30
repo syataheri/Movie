@@ -14,4 +14,4 @@ const makeLoginAdmin = ({ adminDB, jwt, verify, EmailOrPasswordWrongError }) => 
     }
 }
 
-module.exports = makeLoginAdmin;
+export { makeLoginAdmin };

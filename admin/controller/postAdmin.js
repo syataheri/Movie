@@ -1,9 +1,9 @@
-const makeAdmin = ( createAdmin ) => {
+const makeAdmin = (createAdmin) => {
     return async (httpRequest) => {
         try {
             const data = httpRequest.body;
             const result = await createAdmin(data);
-            if(result.statusCode){
+            if (result.statusCode) {
                 throw result;
             }
             return {
@@ -24,7 +24,7 @@ const makeAdmin = ( createAdmin ) => {
                 body: {
                     error: {
                         message: e.message,
-                        data: e.data?e.data:""
+                        data: e.data ? e.data : ""
                     }
                 }
             }
@@ -32,4 +32,4 @@ const makeAdmin = ( createAdmin ) => {
     }
 }
 
-module.exports = makeAdmin;
+export { makeAdmin };

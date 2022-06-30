@@ -19,4 +19,4 @@ const makeAddMovie = ({ makeMovie, movieDB, MovieDuplicateError }) => {
     }
 }
 
-module.exports = makeAddMovie;
+export { makeAddMovie };

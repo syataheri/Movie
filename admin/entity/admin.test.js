@@ -1,5 +1,5 @@
-const makeAdmin = require("./app");
-const { NotValidError } = require("../../exceptions");
+import { makeAdmin } from "./app.js";
+import { NotValidError } from "../../exceptions.js";
 
 
 describe("admin", () => {

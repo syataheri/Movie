@@ -68,4 +68,4 @@ const makeMovieDB = ({ Movie, ServerError, Op }) => {
     });
 }
 
-module.exports = makeMovieDB;
+export { makeMovieDB };

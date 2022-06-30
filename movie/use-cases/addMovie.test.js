@@ -1,5 +1,5 @@
-const { addMovie } = require("./app");
-const sequelize = require("../../db/db");
+import { addMovie } from "./app.js";
+import { sequelize } from "../../db/db.js";
 
 describe("add movie", () => {
     let movie, response;

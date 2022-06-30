@@ -1,11 +1,11 @@
-const { createAdmin, login, removeAdmin } = require("./app");
-const sequelize = require("../../db/db");
-const { EmailOrPasswordWrongError, ServerError } = require("../../exceptions");
+import { createAdmin, login, removeAdmin } from "./app.js";
+import { sequelize } from "../../db/db.js";
+import { EmailOrPasswordWrongError } from "../../exceptions.js";
 
 describe("admin login", () => {
-    let admin, response;
+    let admin;
 
-    beforeAll(async() => {
+    beforeAll(async () => {
         sequelize.sync();
         await createAdmin(admin = { firstName: "sya", lastName: "taheri", email: "syataheri@gmail.com", password: "2154@KSsjsde" });
     });

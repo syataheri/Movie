@@ -1,7 +1,7 @@
-const isValid = require("../utils/validation");
-const { NotValidError } = require("../../exceptions");
-const makeBuildMovie = require("./movie");
+import { isValid } from "../utils/validation.js";
+import { NotValidError } from "../../exceptions.js";
+import { makeBuildMovie } from "./movie.js";
 
 const makeMovie = makeBuildMovie({ isValid, NotValidError });
 
-module.exports = makeMovie;
+export { makeMovie };

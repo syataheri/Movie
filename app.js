@@ -1,12 +1,13 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const express = require("express");
+import express from "express";
 
-const { isAuth } = require("./middleWare/app");
+import { isAuth } from "./middleWare/app.js";
 
-const { postAdmin, postUpdateAdmin, postRremoveAdmin, postLogin, getAdmins } = require("./admin/controller/app");
-const { postAddMovie, postUpdateMovie, getMovies, getMovie, postRemoveMovie } = require("./movie/controller/app");
-const makeExpressCallback = require("./express-callback/express-callback");
+import { postAdmin, postUpdateAdmin, postRremoveAdmin, postLogin, getAdmins } from "./admin/controller/app.js";
+import { postAddMovie, postUpdateMovie, getMovies, getMovie, postRemoveMovie } from "./movie/controller/app.js";
+import { makeExpressCallback } from "./express-callback/express-callback.js";
 
 const app = express();
 
@@ -36,7 +37,7 @@ app.use((err, req, res, next) => {
     });
 })
 
-const sequelize = require("./db/db");
+import { sequelize } from "./db/db.js";
 
 sequelize.sync().then((result) => {
     app.listen(process.env.PORT, () => console.log(`listening og port ${process.env.PORT}`));

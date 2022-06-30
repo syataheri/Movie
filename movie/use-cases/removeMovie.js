@@ -17,4 +17,4 @@ const makeRemoveMovie = ({ movieDB, MovieNotFoundError, ForbiddenError }) => {
     }
 }
 
-module.exports = makeRemoveMovie;
+export { makeRemoveMovie };

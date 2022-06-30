@@ -65,7 +65,7 @@ class ServerError extends BaseError {
     }
 }
 
-module.exports = {
+export {
     EmailDuplicateError,
     MovieDuplicateError,
     EmailOrPasswordWrongError,

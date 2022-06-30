@@ -1,10 +1,10 @@
-const { removeAdmin, createAdmin } = require("./app");
-const { EmailDuplicateError, ServerError } = require("../../exceptions");
-const sequelize = require("../../db/db");
+import { removeAdmin, createAdmin } from "./app.js";
+import { EmailDuplicateError, ServerError } from "../../exceptions.js";
+import { sequelize } from "../../db/db.js";
 
 
 describe("create an admin and save it to db...", () => {
-    let admin, response;
+    let admin;
 
     beforeAll(async () => {
         sequelize.sync();

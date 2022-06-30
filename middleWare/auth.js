@@ -16,4 +16,4 @@ const makeIsAuth = ({ jwt, NotAuthorizedError }) => {
     }
 }
 
-module.exports = makeIsAuth;
+export { makeIsAuth };

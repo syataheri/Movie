@@ -28,4 +28,4 @@ const makeGetMovies = (selectMovies) => {
     }
 }
 
-module.exports = makeGetMovies;
+export { makeGetMovies };

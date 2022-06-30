@@ -1,11 +1,11 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
-const isValid = async(data) => {
+const isValid = async (data) => {
     const schema = Joi.object({
         firstName: Joi.string().required().trim().min(3).max(25).lowercase()
-        .pattern(new RegExp('^[a-z]+$')),
+            .pattern(new RegExp('^[a-z]+$')),
         lastName: Joi.string().required().trim().min(3).max(25).lowercase()
-        .pattern(new RegExp('^[a-z]+$')),
+            .pattern(new RegExp('^[a-z]+$')),
         email: Joi.string().required()
             .email().message("You should enter a valid email address"),
         password: Joi.string().required()
@@ -16,4 +16,4 @@ const isValid = async(data) => {
     return err.error;
 }
 
-module.exports = isValid;
+export { isValid };

@@ -1,7 +1,7 @@
 const makeGetMovie = (selectMovies) => {
     return async (httpRequest) => {
         try {
-        const {title} = httpRequest.body;
+            const { title } = httpRequest.body;
             const movies = await selectMovies(title);
             return {
                 headers: {
@@ -29,4 +29,4 @@ const makeGetMovie = (selectMovies) => {
     }
 }
 
-module.exports = makeGetMovie;
+export { makeGetMovie };

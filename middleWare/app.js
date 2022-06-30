@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-const { NotAuthorizedError } = require("../exceptions");
-const makeIsAuth = require("./auth");
+import { NotAuthorizedError } from "../exceptions.js";
+import { makeIsAuth } from "./auth.js";
 
 const isAuth = makeIsAuth({ jwt, NotAuthorizedError });
 
-module.exports = { isAuth };
+export { isAuth };

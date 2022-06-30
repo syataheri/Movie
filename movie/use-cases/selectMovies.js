@@ -12,4 +12,4 @@ const makeSelectMovies = ({ movieDB, MovieNotFoundError }) => {
     }
 }
 
-module.exports = makeSelectMovies;
+export { makeSelectMovies };

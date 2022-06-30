@@ -1,12 +1,12 @@
-const makeMovie = require("./app");
-const addMovie = require("../use-cases/app");
+import { makeMovie } from "./app.js";
+import { addMovie } from "../use-cases/app.js";
 
 describe("movie", () => {
     let movie, response;
     it("title be less that 3 or more than 50 character , respond with 406", async () => {
         movie = ({ title: "in", type: "film", imdb: 8.4, genre: "romantic", yearOfCreation: 2014, countryOfCreation: "USA", adminId: 2 });
         // response = await makeMovie(movie);
-        expect(async() => {await makeMovie(movie);}).toThrow();
+        expect(async () => { await makeMovie(movie); }).toThrow();
 
         // movie = ({ title: "inadnakjdaksdalksdjaskljdaskldjadklsjldkacfjsdkljcsdklcjfsdklcd", type: "film", imdb: 8.4, genre: "romantic", yearOfCreation: 2014, countryOfCreation: "USA", adminId: 2 });
         // response = await makeMovie(movie);

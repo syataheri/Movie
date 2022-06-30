@@ -36,4 +36,4 @@ const makePostRemoveMovie = (removeMovie) => {
     }
 }
 
-module.exports = makePostRemoveMovie;
+export { makePostRemoveMovie };

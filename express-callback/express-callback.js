@@ -26,4 +26,4 @@ const makeExpressCallback = (controller) => {
   }
 }
 
-module.exports = makeExpressCallback;
+export { makeExpressCallback };

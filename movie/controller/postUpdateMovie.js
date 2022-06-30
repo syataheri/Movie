@@ -34,4 +34,4 @@ const makePostUpdateMovie = (updateMovie) => {
     }
 }
 
-module.exports = makePostUpdateMovie;
+export { makePostUpdateMovie };

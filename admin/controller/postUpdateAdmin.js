@@ -25,7 +25,7 @@ const makeUpdateAdmin = (updateAdmin) => {
                 body: {
                     error: {
                         message: e.message,
-                        data: e.data?e.data:""
+                        data: e.data ? e.data : ""
                     }
                 }
             }
@@ -33,4 +33,4 @@ const makeUpdateAdmin = (updateAdmin) => {
     }
 }
 
-module.exports = makeUpdateAdmin;
+export { makeUpdateAdmin };

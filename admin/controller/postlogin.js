@@ -4,11 +4,11 @@ const makeLogin = (login) => {
             const data = httpRequest.body;
             let result = await login(data);
 
-                // if (!result[2]) {
-                //     const token = result[0];
-                //     console.log(token);
-                //     result = result[1];
-                // }
+            // if (!result[2]) {
+            //     const token = result[0];
+            //     console.log(token);
+            //     result = result[1];
+            // }
             return {
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,4 +35,4 @@ const makeLogin = (login) => {
     }
 }
 
-module.exports = makeLogin;
+export { makeLogin };

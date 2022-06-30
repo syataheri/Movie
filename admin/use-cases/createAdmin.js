@@ -16,4 +16,5 @@ const makebuildAdmin = ({ makeCreateAdmin, adminDB, EmailDuplicateError }) => {
 
     }
 }
-module.exports = makebuildAdmin;
+
+export { makebuildAdmin };
